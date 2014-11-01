@@ -1,0 +1,6 @@
+To many characters. Enter a single letter and a single number ex. 'A1'
+Not enough characters.Enter a single letter and a single number ex. 'A1'
+First input must be a letter from A to H ex. 'B1'
+Second input must be a number from 1 to 8 ex. 'B1'
+Wrong gamepiece! Players must select one's own gamepiece.
+Regular pieces can only move in a forward direction.

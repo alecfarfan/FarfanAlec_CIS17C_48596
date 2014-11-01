@@ -1,0 +1,141 @@
+\hypertarget{class_reg_white}{\section{Reg\-White Class Reference}
+\label{class_reg_white}\index{Reg\-White@{Reg\-White}}
+}
+
+
+{\ttfamily \#include \char`\"{}Reg\-White.\-h\char`\"{}}
+
+Inheritance diagram for Reg\-White\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_reg_white}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_reg_white_a2a424aed051c97e73ffa03ac7a9b9ec0}{Reg\-White} (char a)
+\item 
+virtual char \hyperlink{class_reg_white_aa59f0cfb60c36f631004242c33dfcabc}{get\-Show} ()
+\item 
+virtual void \hyperlink{class_reg_white_a7995b3b0df425a15c9da2bf8be8dca3a}{val\-Pick} (string, \hyperlink{class_board}{Board} \&, char, char, char \&, int \&)
+\item 
+virtual bool \hyperlink{class_reg_white_a298051d178de6cd50689ad43e8bc9f04}{chk\-Pick} (\hyperlink{class_board}{Board} \&, char, char, char \&, int)
+\item 
+virtual void \hyperlink{class_reg_white_a9bdb0787be549a35da2afe05950ba2f1}{val\-Move} (string, \hyperlink{class_board}{Board} \&, char, char, char, char, int \&, int)
+\item 
+virtual bool \hyperlink{class_reg_white_acacc51249fc17deb0e1f50cc9c09d068}{chk\-Move} (\hyperlink{class_board}{Board} \&, char, char, char, int, int)
+\item 
+void \hyperlink{class_reg_white_a6062b358e5da3b86ccfc3136664daaaf}{chk\-King} (\hyperlink{class_board}{Board} \&, char, char, char, int, int)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_reg_white}{Reg\-White} class represents the regular white checker which has not been kinged. Since white checkers start at the bottom of the board where the index values approach their max regular black checkers can only move in minus -\/ directions. An uppercase 'O' character is used to represent a white checker piece. The \hyperlink{class_reg_white}{Reg\-White} class contains all the necessary functions to evaluate moves across the board for white checkers. As with all of the checker piece objects, only one needs to be instantiated for the game, which acts as a key to gaining access to the game board. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_reg_white_a2a424aed051c97e73ffa03ac7a9b9ec0}{\index{Reg\-White@{Reg\-White}!Reg\-White@{Reg\-White}}
+\index{Reg\-White@{Reg\-White}!RegWhite@{Reg\-White}}
+\subsubsection[{Reg\-White}]{\setlength{\rightskip}{0pt plus 5cm}Reg\-White\-::\-Reg\-White (
+\begin{DoxyParamCaption}
+\item[{char}]{a}
+\end{DoxyParamCaption}
+)}}\label{class_reg_white_a2a424aed051c97e73ffa03ac7a9b9ec0}
+This function is the constructor for the \hyperlink{class_reg_white}{Reg\-White} class. The constructor is used to create a regular white checker. This class inherits from the abstract base class \hyperlink{class_game_piece}{Game\-Piece} whose constructor is called.
+
+\subsection{Member Function Documentation}
+\hypertarget{class_reg_white_a6062b358e5da3b86ccfc3136664daaaf}{\index{Reg\-White@{Reg\-White}!chk\-King@{chk\-King}}
+\index{chk\-King@{chk\-King}!RegWhite@{Reg\-White}}
+\subsubsection[{chk\-King}]{\setlength{\rightskip}{0pt plus 5cm}void Reg\-White\-::chk\-King (
+\begin{DoxyParamCaption}
+\item[{{\bf Board} \&}]{game\-Board, }
+\item[{char}]{g\-Piece, }
+\item[{char}]{k\-Piece, }
+\item[{char}]{g\-Piece\-O, }
+\item[{int}]{p1\-Pieces, }
+\item[{int}]{p2\-Pieces}
+\end{DoxyParamCaption}
+)}}\label{class_reg_white_a6062b358e5da3b86ccfc3136664daaaf}
+This function checks to see if player one has made one of their pieces to the opposite side of the board. If so the square of the board is assigned the character 'W' representing a king and the program lets the users know of the change.\hypertarget{class_reg_white_acacc51249fc17deb0e1f50cc9c09d068}{\index{Reg\-White@{Reg\-White}!chk\-Move@{chk\-Move}}
+\index{chk\-Move@{chk\-Move}!RegWhite@{Reg\-White}}
+\subsubsection[{chk\-Move}]{\setlength{\rightskip}{0pt plus 5cm}bool Reg\-White\-::chk\-Move (
+\begin{DoxyParamCaption}
+\item[{{\bf Board} \&}]{game\-Board, }
+\item[{char}]{b\-Piece, }
+\item[{char}]{g\-Piece\-O, }
+\item[{char}]{k\-Piece\-O, }
+\item[{int}]{coord\-S, }
+\item[{int}]{coord\-M}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_reg_white_acacc51249fc17deb0e1f50cc9c09d068}
+This function checks to see if the empty game square player two has chosen to move a selected piece to is a valid move. If no piece is being captured the move square must be +7 or +9 squares away from. If a piece is being captured, then the same rules apply in terms of sign but with the numbers +14 and +18. Also the square between the selection and the move needs to contain the opponents game piece in it for it to be valid
+
+Implements \hyperlink{class_game_piece}{Game\-Piece}.
+
+\hypertarget{class_reg_white_a298051d178de6cd50689ad43e8bc9f04}{\index{Reg\-White@{Reg\-White}!chk\-Pick@{chk\-Pick}}
+\index{chk\-Pick@{chk\-Pick}!RegWhite@{Reg\-White}}
+\subsubsection[{chk\-Pick}]{\setlength{\rightskip}{0pt plus 5cm}bool Reg\-White\-::chk\-Pick (
+\begin{DoxyParamCaption}
+\item[{{\bf Board} \&}]{game\-Board, }
+\item[{char}]{g\-Piece, }
+\item[{char}]{k\-Piece, }
+\item[{char \&}]{used, }
+\item[{int}]{element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_reg_white_a298051d178de6cd50689ad43e8bc9f04}
+This function checks the selection made by a player and determines if it is valid. In order for the selection to be valid the array element of that coordinate must contain that particular player's piece in it.
+
+Implements \hyperlink{class_game_piece}{Game\-Piece}.
+
+\hypertarget{class_reg_white_aa59f0cfb60c36f631004242c33dfcabc}{\index{Reg\-White@{Reg\-White}!get\-Show@{get\-Show}}
+\index{get\-Show@{get\-Show}!RegWhite@{Reg\-White}}
+\subsubsection[{get\-Show}]{\setlength{\rightskip}{0pt plus 5cm}char Reg\-White\-::get\-Show (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_reg_white_aa59f0cfb60c36f631004242c33dfcabc}
+Accessor function for the regular black checker, returns the char variable named show, value of 149 representing a black bullet like character
+
+Implements \hyperlink{class_game_piece}{Game\-Piece}.
+
+\hypertarget{class_reg_white_a9bdb0787be549a35da2afe05950ba2f1}{\index{Reg\-White@{Reg\-White}!val\-Move@{val\-Move}}
+\index{val\-Move@{val\-Move}!RegWhite@{Reg\-White}}
+\subsubsection[{val\-Move}]{\setlength{\rightskip}{0pt plus 5cm}void Reg\-White\-::val\-Move (
+\begin{DoxyParamCaption}
+\item[{string}]{choice, }
+\item[{{\bf Board} \&}]{game\-Board, }
+\item[{char}]{g\-Piece, }
+\item[{char}]{g\-Piece\-O, }
+\item[{char}]{k\-Piece\-O, }
+\item[{char}]{b\-Piece, }
+\item[{int \&}]{coord\-M, }
+\item[{int}]{coord\-S}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_reg_white_a9bdb0787be549a35da2afe05950ba2f1}
+This function determines which players turn it is and keeps prompting for a coordinate choice until a valid move is made. The valid move is stored in the coord\-M reference variable. In order for a move to be valid the move must be in a forward and diagonal motion of one space if not jumping, and two if a capture is made.
+
+Implements \hyperlink{class_game_piece}{Game\-Piece}.
+
+\hypertarget{class_reg_white_a7995b3b0df425a15c9da2bf8be8dca3a}{\index{Reg\-White@{Reg\-White}!val\-Pick@{val\-Pick}}
+\index{val\-Pick@{val\-Pick}!RegWhite@{Reg\-White}}
+\subsubsection[{val\-Pick}]{\setlength{\rightskip}{0pt plus 5cm}void Reg\-White\-::val\-Pick (
+\begin{DoxyParamCaption}
+\item[{string}]{choice, }
+\item[{{\bf Board} \&}]{game\-Board, }
+\item[{char}]{g\-Piece, }
+\item[{char}]{k\-Piece, }
+\item[{char \&}]{used, }
+\item[{int \&}]{coord\-S}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_reg_white_a7995b3b0df425a15c9da2bf8be8dca3a}
+This function determines which players turn it is and keeps prompting for a coordinate choice until a valid pick is made. The valid pick is stored in the coord\-S reference variable. This is one of two functions responsible for validating input in terms of what is legal within the rules of the game, the other is val\-Move
+
+Implements \hyperlink{class_game_piece}{Game\-Piece}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/\-Users/\-Alec/\-Desktop/\-Project\-\_\-2/\-Checkers/Reg\-White.\-h\item 
+C\-:/\-Users/\-Alec/\-Desktop/\-Project\-\_\-2/\-Checkers/Reg\-White.\-cpp\end{DoxyCompactItemize}

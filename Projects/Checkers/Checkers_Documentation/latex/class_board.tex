@@ -1,0 +1,129 @@
+\hypertarget{class_board}{\section{Board Class Reference}
+\label{class_board}\index{Board@{Board}}
+}
+
+
+{\ttfamily \#include \char`\"{}Board.\-h\char`\"{}}
+
+Inheritance diagram for Board\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_board}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_board_a9ee491d4fea680cf69b033374a9fdfcb}{Board} ()
+\item 
+\hyperlink{class_board_ab7d6d506f23ebce7179e88ce9f15eb6c}{Board} (\hyperlink{class_board}{Board} \&)
+\item 
+void \hyperlink{class_board_a8b7e2a5722a7ec5527d853fb43494aa3}{display} (char, char, int, int)
+\item 
+int \hyperlink{class_board_a72a4e5c6530afafb6617e044f39ce7f2}{get\-Choice} (std\-::string, int)
+\item 
+bool \hyperlink{class_board_acaacbbbe559e3648019e1eddc7c94a1b}{remove} (\hyperlink{class_board}{Board} \&, char, int, int, int \&)
+\item 
+void \hyperlink{class_board_a94f4902b3feba31138f01f16dc1148c1}{chk\-Win} (bool \&, int, int)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_board_a6c43132a8b631bda53df49dce4ba93db}{swap} (char \&, char \&)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_board_ac3681603c987fc26f8c92f686f6771f3}{char {\bfseries square} \mbox{[}65\mbox{]}}\label{class_board_ac3681603c987fc26f8c92f686f6771f3}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_board_ab995b607204a3fc16276228c50c7784f}{class {\bfseries Game\-Piece}}\label{class_board_ab995b607204a3fc16276228c50c7784f}
+
+\item 
+\hypertarget{class_board_a0939d48ce34dc3c2c43e985becde0059}{class {\bfseries Reg\-White}}\label{class_board_a0939d48ce34dc3c2c43e985becde0059}
+
+\item 
+\hypertarget{class_board_a13f65c58c2d8e57345d4d58a043a27d0}{class {\bfseries Reg\-Black}}\label{class_board_a13f65c58c2d8e57345d4d58a043a27d0}
+
+\item 
+\hypertarget{class_board_aa6cf82643411ed9e0232886e11bd82f3}{class {\bfseries King}}\label{class_board_aa6cf82643411ed9e0232886e11bd82f3}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_board}{Board} class represents the physical checkerboard that a game of checkers is usually played on. To mimic a checkerboard's black and white squares, plus + and minus -\/ characters are printed to the board. The classes representing black checkers, white checkers, and king checkers are friends with this class. The board is changed by these objects by the characters held within them, an object doesn't actually need to be placed on the board. The \hyperlink{class_board}{Board} class is responsible for all the tasks involving searching the board as well as making changes to it. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_board_a9ee491d4fea680cf69b033374a9fdfcb}{\index{Board@{Board}!Board@{Board}}
+\index{Board@{Board}!Board@{Board}}
+\subsubsection[{Board}]{\setlength{\rightskip}{0pt plus 5cm}Board\-::\-Board (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_board_a9ee491d4fea680cf69b033374a9fdfcb}
+This function is the constructor for the \hyperlink{class_board}{Board} class. Plus '+' and minus '-\/' signs are painted across the board in a checkerboard image with 'O' and ascii 149 representing the white and black checkers respectively.\hypertarget{class_board_ab7d6d506f23ebce7179e88ce9f15eb6c}{\index{Board@{Board}!Board@{Board}}
+\index{Board@{Board}!Board@{Board}}
+\subsubsection[{Board}]{\setlength{\rightskip}{0pt plus 5cm}Board\-::\-Board (
+\begin{DoxyParamCaption}
+\item[{{\bf Board} \&}]{obj}
+\end{DoxyParamCaption}
+)}}\label{class_board_ab7d6d506f23ebce7179e88ce9f15eb6c}
+This function is a copy constructor for the \hyperlink{class_board}{Board} class. This function is mainly used to instantiate \hyperlink{class_state}{State} objects which are derived from this class.
+
+\subsection{Member Function Documentation}
+\hypertarget{class_board_a94f4902b3feba31138f01f16dc1148c1}{\index{Board@{Board}!chk\-Win@{chk\-Win}}
+\index{chk\-Win@{chk\-Win}!Board@{Board}}
+\subsubsection[{chk\-Win}]{\setlength{\rightskip}{0pt plus 5cm}void Board\-::chk\-Win (
+\begin{DoxyParamCaption}
+\item[{bool \&}]{win, }
+\item[{int}]{p1, }
+\item[{int}]{p2}
+\end{DoxyParamCaption}
+)}}\label{class_board_a94f4902b3feba31138f01f16dc1148c1}
+This function checks to see if the game has been won by viewing the count of both of the players pieces. If the game is over the message stating who the winner is gets printed to the screen.\hypertarget{class_board_a8b7e2a5722a7ec5527d853fb43494aa3}{\index{Board@{Board}!display@{display}}
+\index{display@{display}!Board@{Board}}
+\subsubsection[{display}]{\setlength{\rightskip}{0pt plus 5cm}void Board\-::display (
+\begin{DoxyParamCaption}
+\item[{char}]{a, }
+\item[{char}]{b, }
+\item[{int}]{p1\-C, }
+\item[{int}]{p2\-C}
+\end{DoxyParamCaption}
+)}}\label{class_board_a8b7e2a5722a7ec5527d853fb43494aa3}
+Function displays a checkerboard made by piecing together strings and nesting an element of the array in each of the squares. Around the board a letter/number coordinate system is drawn to allow the users to point to a game square. To the right of the game board a scoreboard is printed showing current statuses of the game.\hypertarget{class_board_a72a4e5c6530afafb6617e044f39ce7f2}{\index{Board@{Board}!get\-Choice@{get\-Choice}}
+\index{get\-Choice@{get\-Choice}!Board@{Board}}
+\subsubsection[{get\-Choice}]{\setlength{\rightskip}{0pt plus 5cm}int Board\-::get\-Choice (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{, }
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}}\label{class_board_a72a4e5c6530afafb6617e044f39ce7f2}
+This function reads in a letter/number coordinate choice from the user which is then copied into a character array to be manipulated and tested for validity. The type of validity this function is responsible for checking is in terms of data format ie. proper size, proper letter/number entry, ect. The val\-Choice and val\-Move functions are responsible for testing validity in terms of what is legal in the game of checkers.\hypertarget{class_board_acaacbbbe559e3648019e1eddc7c94a1b}{\index{Board@{Board}!remove@{remove}}
+\index{remove@{remove}!Board@{Board}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}bool Board\-::remove (
+\begin{DoxyParamCaption}
+\item[{{\bf Board} \&}]{game\-Board, }
+\item[{char}]{b\-Piece, }
+\item[{int}]{coord\-S, }
+\item[{int}]{coord\-M, }
+\item[{int \&}]{count}
+\end{DoxyParamCaption}
+)}}\label{class_board_acaacbbbe559e3648019e1eddc7c94a1b}
+This function removes a game piece that has been jumped and captured. The array element holding the game piece that needs to be removed can be found by taking the average of the coordinate of the selected game piece and the coordinate of empty game square chosen to move the piece to.\hypertarget{class_board_a6c43132a8b631bda53df49dce4ba93db}{\index{Board@{Board}!swap@{swap}}
+\index{swap@{swap}!Board@{Board}}
+\subsubsection[{swap}]{\setlength{\rightskip}{0pt plus 5cm}void Board\-::swap (
+\begin{DoxyParamCaption}
+\item[{char \&}]{a, }
+\item[{char \&}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_board_a6c43132a8b631bda53df49dce4ba93db}
+This function updates the display of the board by swapping the character representing a player's game piece which has been selected, with the character representing the empty game square that has been chosen to move the selected game piece to.
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/\-Users/\-Alec/\-Desktop/\-Project\-\_\-2/\-Checkers/Board.\-h\item 
+C\-:/\-Users/\-Alec/\-Desktop/\-Project\-\_\-2/\-Checkers/Board.\-cpp\end{DoxyCompactItemize}
