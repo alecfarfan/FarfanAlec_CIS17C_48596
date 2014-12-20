@@ -1,0 +1,127 @@
+\hypertarget{class_king}{\section{King Class Reference}
+\label{class_king}\index{King@{King}}
+}
+
+
+{\ttfamily \#include \char`\"{}King.\-h\char`\"{}}
+
+Inheritance diagram for King\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_king}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_king_ae132ff90495a95b62097555ed2c069bf}{King} (char)
+\item 
+virtual char \hyperlink{class_king_a504e6f39d99211c0d69f3dd3a64a8a5e}{get\-Show} ()
+\item 
+virtual void \hyperlink{class_king_a6d35246db649771c8ef3f5cabd52d239}{val\-Pick} (string, \hyperlink{class_board}{Board} \&, char, char, char \&, int \&)
+\item 
+virtual bool \hyperlink{class_king_ad20f20db3007c880a5aba1e043968e70}{chk\-Pick} (\hyperlink{class_board}{Board} \&, char, char, char \&, int)
+\item 
+virtual void \hyperlink{class_king_ac75abcc454291598f9804d3e68817633}{val\-Move} (string, \hyperlink{class_board}{Board} \&, char, char, char, char, int \&, int)
+\item 
+virtual bool \hyperlink{class_king_ac18d0b1d7f928e0243041999f5a1fb81}{chk\-Move} (\hyperlink{class_board}{Board} \&, char, char, char, int, int)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_king}{King} class represents pieces of the checkerboard which have been 'kinged' Player one (White) has kings that appear as the character 'M' and player two (Black) has kings that appear as the character 'W'. Kings can move backwards and forward on the board, therefore the pointer arithmetic is the same for both the white and black kings. The \hyperlink{class_king}{King} class has its own function for validating it's move, but shares the val\-Pick move with whatever regular checker class is calling it. Aside from that one function, the \hyperlink{class_king}{King} class contains all of the functions responsible for moving the king around the board. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_king_ae132ff90495a95b62097555ed2c069bf}{\index{King@{King}!King@{King}}
+\index{King@{King}!King@{King}}
+\subsubsection[{King}]{\setlength{\rightskip}{0pt plus 5cm}King\-::\-King (
+\begin{DoxyParamCaption}
+\item[{char}]{a}
+\end{DoxyParamCaption}
+)}}\label{class_king_ae132ff90495a95b62097555ed2c069bf}
+This function is the constructor for the \hyperlink{class_king}{King} class. The constructor is used to create a king checker. This class inherits from the abstract base class \hyperlink{class_game_piece}{Game\-Piece} whose constructor is called.
+
+\subsection{Member Function Documentation}
+\hypertarget{class_king_ac18d0b1d7f928e0243041999f5a1fb81}{\index{King@{King}!chk\-Move@{chk\-Move}}
+\index{chk\-Move@{chk\-Move}!King@{King}}
+\subsubsection[{chk\-Move}]{\setlength{\rightskip}{0pt plus 5cm}bool King\-::chk\-Move (
+\begin{DoxyParamCaption}
+\item[{{\bf Board} \&}]{game\-Board, }
+\item[{char}]{b\-Piece, }
+\item[{char}]{g\-Piece\-O, }
+\item[{char}]{k\-Piece\-O, }
+\item[{int}]{coord\-S, }
+\item[{int}]{coord\-M}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_king_ac18d0b1d7f928e0243041999f5a1fb81}
+This function checks to see if the empty game square player two has chosen to move a selected piece to is a valid move. If no piece is being captured the move square must be +7 or +9 squares away from. If a piece is being captured, then the same rules apply in terms of sign but with the numbers +14 and +18. Also the square between the selection and the move needs to contain the opponents game piece in it for it to be valid
+
+Implements \hyperlink{class_game_piece}{Game\-Piece}.
+
+\hypertarget{class_king_ad20f20db3007c880a5aba1e043968e70}{\index{King@{King}!chk\-Pick@{chk\-Pick}}
+\index{chk\-Pick@{chk\-Pick}!King@{King}}
+\subsubsection[{chk\-Pick}]{\setlength{\rightskip}{0pt plus 5cm}bool King\-::chk\-Pick (
+\begin{DoxyParamCaption}
+\item[{{\bf Board} \&}]{, }
+\item[{char}]{, }
+\item[{char}]{, }
+\item[{char \&}]{, }
+\item[{int}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_king_ad20f20db3007c880a5aba1e043968e70}
+
+
+Implements \hyperlink{class_game_piece}{Game\-Piece}.
+
+\hypertarget{class_king_a504e6f39d99211c0d69f3dd3a64a8a5e}{\index{King@{King}!get\-Show@{get\-Show}}
+\index{get\-Show@{get\-Show}!King@{King}}
+\subsubsection[{get\-Show}]{\setlength{\rightskip}{0pt plus 5cm}char King\-::get\-Show (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_king_a504e6f39d99211c0d69f3dd3a64a8a5e}
+
+
+Implements \hyperlink{class_game_piece}{Game\-Piece}.
+
+\hypertarget{class_king_ac75abcc454291598f9804d3e68817633}{\index{King@{King}!val\-Move@{val\-Move}}
+\index{val\-Move@{val\-Move}!King@{King}}
+\subsubsection[{val\-Move}]{\setlength{\rightskip}{0pt plus 5cm}void King\-::val\-Move (
+\begin{DoxyParamCaption}
+\item[{string}]{choice, }
+\item[{{\bf Board} \&}]{game\-Board, }
+\item[{char}]{g\-Piece, }
+\item[{char}]{g\-Piece\-O, }
+\item[{char}]{k\-Piece\-O, }
+\item[{char}]{b\-Piece, }
+\item[{int \&}]{coord\-M, }
+\item[{int}]{coord\-S}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_king_ac75abcc454291598f9804d3e68817633}
+This function determines which players turn it is and keeps prompting for a coordinate choice until a valid move is made. The valid move is stored in the coord\-M reference variable. In order for a move to be valid the move must be in a forward and diagonal motion of one space if not jumping, and two if a capture is made.
+
+Implements \hyperlink{class_game_piece}{Game\-Piece}.
+
+\hypertarget{class_king_a6d35246db649771c8ef3f5cabd52d239}{\index{King@{King}!val\-Pick@{val\-Pick}}
+\index{val\-Pick@{val\-Pick}!King@{King}}
+\subsubsection[{val\-Pick}]{\setlength{\rightskip}{0pt plus 5cm}void King\-::val\-Pick (
+\begin{DoxyParamCaption}
+\item[{string}]{, }
+\item[{{\bf Board} \&}]{, }
+\item[{char}]{, }
+\item[{char}]{, }
+\item[{char \&}]{, }
+\item[{int \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_king_a6d35246db649771c8ef3f5cabd52d239}
+
+
+Implements \hyperlink{class_game_piece}{Game\-Piece}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/\-Users/\-Alec/\-Desktop/\-Project\-\_\-2/\-Checkers/King.\-h\item 
+C\-:/\-Users/\-Alec/\-Desktop/\-Project\-\_\-2/\-Checkers/King.\-cpp\end{DoxyCompactItemize}

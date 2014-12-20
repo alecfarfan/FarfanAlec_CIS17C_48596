@@ -1,0 +1,108 @@
+\hypertarget{class_state}{\section{State Class Reference}
+\label{class_state}\index{State@{State}}
+}
+
+
+{\ttfamily \#include \char`\"{}State.\-h\char`\"{}}
+
+Inheritance diagram for State\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_state}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_state_aebfd8b6e0c1c801bcef2160ce1a4aa7f}{State} (\hyperlink{class_board}{Board} \&)
+\item 
+\hyperlink{class_state_a5648beca719c17700abdf3d7e09298a1}{State} (\hyperlink{class_board}{Board} \&, std\-::string, std\-::string, int)
+\item 
+int \hyperlink{class_state_a12df9c21402d4f595904c91d2753e17a}{get\-Choice} (\hyperlink{class_state}{State} $\ast$, std\-::string, int)
+\item 
+void \hyperlink{class_state_a2cd79fa626e83ed7b9aee2cb1f111f99}{remove} (\hyperlink{class_state}{State} \&, int, int)
+\item 
+void \hyperlink{class_state_a70f163051bd4e35f510b232a1dbd4d16}{print} ()
+\item 
+float \hyperlink{class_state_a399000f09fffa8b80e3c6145bfb15c14}{utility} ()
+\item 
+\hyperlink{class_state}{State} \hyperlink{class_state_a25e7e4763a808d30065fc81c933e5518}{operator=} (\hyperlink{class_state}{State} \&)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_state_ab195efc2372da59d716bafc1ce54f7ed}{class {\bfseries Game\-Tree}}\label{class_state_ab195efc2372da59d716bafc1ce54f7ed}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_state}{State} class represents the state of the game at a given position. This classes primary purpose is for use in the A\-I's decision. The \hyperlink{class_game_tree}{Game\-Tree} class creates a tree by filling it up with \hyperlink{class_state}{State} objects representing all the possible legal moves for each player starting from a given position, up to a certain depth limit. The state class inherits from the \hyperlink{class_board}{Board} class and uses its copy constructor in the derived constructor call and then makes the appropriate changes for each legal move. Then the utility function is applied to give the instance being declared a numeric score to be used in the minimax decision. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_state_aebfd8b6e0c1c801bcef2160ce1a4aa7f}{\index{State@{State}!State@{State}}
+\index{State@{State}!State@{State}}
+\subsubsection[{State}]{\setlength{\rightskip}{0pt plus 5cm}State\-::\-State (
+\begin{DoxyParamCaption}
+\item[{{\bf Board} \&}]{a}
+\end{DoxyParamCaption}
+)}}\label{class_state_aebfd8b6e0c1c801bcef2160ce1a4aa7f}
+Name\-: Alec Farfan Date\-: 06/03/14 Purpose\-: Functions of the \hyperlink{class_state}{State} class This function is the default constructor for the \hyperlink{class_state}{State} class. A \hyperlink{class_board}{Board} object is passed into the function and then is passed to the copy constructor of the base class.\hypertarget{class_state_a5648beca719c17700abdf3d7e09298a1}{\index{State@{State}!State@{State}}
+\index{State@{State}!State@{State}}
+\subsubsection[{State}]{\setlength{\rightskip}{0pt plus 5cm}State\-::\-State (
+\begin{DoxyParamCaption}
+\item[{{\bf Board} \&}]{game\-Board, }
+\item[{std\-::string}]{coord\-S, }
+\item[{std\-::string}]{coord\-M, }
+\item[{int}]{depth}
+\end{DoxyParamCaption}
+)}}\label{class_state_a5648beca719c17700abdf3d7e09298a1}
+This function is the constructor of the \hyperlink{class_state}{State} class used in the generation of the game tree. The \hyperlink{class_board}{Board} object passed into the parameters is then passed to the copy constructor of the base class. The appropriate changes in the board are immediately applied to the new \hyperlink{class_state}{State} object's game board. Finally the utility function is applied giving the game state a numeric score.
+
+\subsection{Member Function Documentation}
+\hypertarget{class_state_a12df9c21402d4f595904c91d2753e17a}{\index{State@{State}!get\-Choice@{get\-Choice}}
+\index{get\-Choice@{get\-Choice}!State@{State}}
+\subsubsection[{get\-Choice}]{\setlength{\rightskip}{0pt plus 5cm}int State\-::get\-Choice (
+\begin{DoxyParamCaption}
+\item[{{\bf State} $\ast$}]{obj, }
+\item[{std\-::string}]{coord, }
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{class_state_a12df9c21402d4f595904c91d2753e17a}
+This function reads in a letter/number coordinate choice from the user which is then copied into a character array to be manipulated and tested for validity. The type of validity this function is responsible for checking is in terms of data format ie. proper size, proper letter/number entry, ect. The val\-Choice and val\-Move functions are responsible for testing validity in terms of what is legal in the game of checkers.\hypertarget{class_state_a25e7e4763a808d30065fc81c933e5518}{\index{State@{State}!operator=@{operator=}}
+\index{operator=@{operator=}!State@{State}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf State} State\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf State} \&}]{right}
+\end{DoxyParamCaption}
+)}}\label{class_state_a25e7e4763a808d30065fc81c933e5518}
+This function overloads the assignment operator '=' for the \hyperlink{class_state}{State} class. When an assignment is made from one \hyperlink{class_state}{State} object to another only the character array representing the game board is copied over.\hypertarget{class_state_a70f163051bd4e35f510b232a1dbd4d16}{\index{State@{State}!print@{print}}
+\index{print@{print}!State@{State}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}void State\-::print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_state_a70f163051bd4e35f510b232a1dbd4d16}
+This function is not used in the game of checkers, it is primarily for testing purposes. The function prints the array representing the game board of the \hyperlink{class_state}{State} object calling it. Calling this function while the tree is generating at a certain depth gives a good view of what moves are available\hypertarget{class_state_a2cd79fa626e83ed7b9aee2cb1f111f99}{\index{State@{State}!remove@{remove}}
+\index{remove@{remove}!State@{State}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}void State\-::remove (
+\begin{DoxyParamCaption}
+\item[{{\bf State} \&}]{game\-Board, }
+\item[{int}]{coord\-S, }
+\item[{int}]{coord\-M}
+\end{DoxyParamCaption}
+)}}\label{class_state_a2cd79fa626e83ed7b9aee2cb1f111f99}
+This function is used to remove game pieces that have been hopped over in the generation of a game state. This function overrides the remove function from the base class hence the \hyperlink{class_state}{State} object passed in as the first parameter\hypertarget{class_state_a399000f09fffa8b80e3c6145bfb15c14}{\index{State@{State}!utility@{utility}}
+\index{utility@{utility}!State@{State}}
+\subsubsection[{utility}]{\setlength{\rightskip}{0pt plus 5cm}float State\-::utility (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_state_a399000f09fffa8b80e3c6145bfb15c14}
+This function calculates and assigns a numeric score for each game state that is generated. All the functions used to improve heuristics are called from this function, contributing to the final score of the game state. After the total is calculated the score is stored in the \hyperlink{class_state}{State} object.
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/\-Users/\-Alec/\-Desktop/\-Project\-\_\-2/\-Checkers/State.\-h\item 
+C\-:/\-Users/\-Alec/\-Desktop/\-Project\-\_\-2/\-Checkers/State.\-cpp\end{DoxyCompactItemize}

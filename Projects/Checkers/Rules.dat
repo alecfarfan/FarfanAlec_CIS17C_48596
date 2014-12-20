@@ -1,0 +1,9 @@
+----------------------------------CHECKERS-----------------------------------
+-----------------------------------------------------------------------------
+
+	Checkers, also known as Draughts, is a two person strategy game where 
+players compete against each other by moving along a diagonal axis, capturing 
+each others pieces by jumping over them. The object of the game is to capture 
+all the opponents game pieces or block them from being able to make any valid 
+moves. The game is played on an 8 x 8 grid with alternating white and black 
+squares across each row

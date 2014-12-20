@@ -1,0 +1,77 @@
+\hypertarget{class_game_piece}{\section{Game\-Piece Class Reference}
+\label{class_game_piece}\index{Game\-Piece@{Game\-Piece}}
+}
+
+
+{\ttfamily \#include \char`\"{}Game\-Piece.\-h\char`\"{}}
+
+Inheritance diagram for Game\-Piece\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_game_piece}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_game_piece_a595e9a724c19032fddf1b7b09e3a2bf3}{virtual void {\bfseries val\-Pick} (string, \hyperlink{class_board}{Board} \&, char, char, char \&, int \&)=0}\label{class_game_piece_a595e9a724c19032fddf1b7b09e3a2bf3}
+
+\item 
+\hypertarget{class_game_piece_af13687186a04d74491d55b9b621b6160}{virtual bool {\bfseries chk\-Pick} (\hyperlink{class_board}{Board} \&, char, char, char \&, int)=0}\label{class_game_piece_af13687186a04d74491d55b9b621b6160}
+
+\item 
+\hypertarget{class_game_piece_a400d161120b2a454e82861c7d1ee5964}{virtual void {\bfseries val\-Move} (string, \hyperlink{class_board}{Board} \&, char, char, char, char, int \&, int)=0}\label{class_game_piece_a400d161120b2a454e82861c7d1ee5964}
+
+\item 
+\hypertarget{class_game_piece_af4a749318d78a0d6bf2480d06aa3d634}{virtual bool {\bfseries chk\-Move} (\hyperlink{class_board}{Board} \&, char, char, char, int, int)=0}\label{class_game_piece_af4a749318d78a0d6bf2480d06aa3d634}
+
+\item 
+\hypertarget{class_game_piece_a6dc3bed526398628e7a18ff8bad5b58e}{virtual char {\bfseries get\-Show} ()=0}\label{class_game_piece_a6dc3bed526398628e7a18ff8bad5b58e}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_game_piece_a8b8da20636f496d24aaeafcad6740a99}{chk\-Dub} (\hyperlink{class_board}{Board} \&, char, char, char, char, int, int \&)
+\item 
+static void \hyperlink{class_game_piece_ad97f1a0c21c5acef771eb4d498519bbf}{swap} (char \&, char \&)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_game_piece_a50f25eea65caa0c2cd67413e70fe8700}{char {\bfseries val}}\label{class_game_piece_a50f25eea65caa0c2cd67413e70fe8700}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_game_piece}{Game\-Piece} class is an abstract base class representing a general game piece to be used in a game of checkers. The class contains five virtual functions for selecting and validating choices of\-: game squares for initial selecting of a piece, and moving the piece to the new square. Three classes are derived from \hyperlink{class_game_piece}{Game\-Piece}; \hyperlink{class_reg_black}{Reg\-Black},\hyperlink{class_reg_white}{Reg\-White},and \hyperlink{class_king}{King}. Each of these three classes require their own unique pointer arithmetic in order to give them the proper functionality with respect to their place in the game. Two non virtual methods are included also for checking for a double jump and swapping characters. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_game_piece_a8b8da20636f496d24aaeafcad6740a99}{\index{Game\-Piece@{Game\-Piece}!chk\-Dub@{chk\-Dub}}
+\index{chk\-Dub@{chk\-Dub}!GamePiece@{Game\-Piece}}
+\subsubsection[{chk\-Dub}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-Piece\-::chk\-Dub (
+\begin{DoxyParamCaption}
+\item[{{\bf Board} \&}]{game\-Board, }
+\item[{char}]{g\-Piece, }
+\item[{char}]{g\-Piece\-O, }
+\item[{char}]{k\-Piece\-O, }
+\item[{char}]{b\-Piece, }
+\item[{int}]{coord\-M, }
+\item[{int \&}]{p1\-Pieces}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_game_piece_a8b8da20636f496d24aaeafcad6740a99}
+This function checks to see if after making a capture another jump is within range. Then the user is asked if they would like to take the second hop and if so, the pieces are swapped.\hypertarget{class_game_piece_ad97f1a0c21c5acef771eb4d498519bbf}{\index{Game\-Piece@{Game\-Piece}!swap@{swap}}
+\index{swap@{swap}!GamePiece@{Game\-Piece}}
+\subsubsection[{swap}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-Piece\-::swap (
+\begin{DoxyParamCaption}
+\item[{char \&}]{a, }
+\item[{char \&}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_game_piece_ad97f1a0c21c5acef771eb4d498519bbf}
+This function updates the display of the board by swapping the character representing a player's game piece which has been selected, with the character representing the empty game square that has been chosen to move the selected game piece to.
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/\-Users/\-Alec/\-Desktop/\-Project\-\_\-2/\-Checkers/Game\-Piece.\-h\item 
+C\-:/\-Users/\-Alec/\-Desktop/\-Project\-\_\-2/\-Checkers/Game\-Piece.\-cpp\end{DoxyCompactItemize}

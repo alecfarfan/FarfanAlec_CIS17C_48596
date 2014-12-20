@@ -1,0 +1,100 @@
+\hypertarget{class_game_tree}{\section{Game\-Tree Class Reference}
+\label{class_game_tree}\index{Game\-Tree@{Game\-Tree}}
+}
+
+
+{\ttfamily \#include \char`\"{}Game\-Tree.\-h\char`\"{}}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_game_tree_a88f39447182520281da9f1ee419ebc27}{Game\-Tree} (\hyperlink{class_board}{Board} \&)
+\item 
+\hyperlink{class_game_tree_affdde7b9a8c14746c78178aeb8f87102}{$\sim$\-Game\-Tree} ()
+\item 
+void \hyperlink{class_game_tree_a20ac6eb474e44847646d3231d7ef2fc0}{insert\-Node} (Node $\ast$)
+\item 
+void \hyperlink{class_game_tree_a9c0b8d81a67c61a2f02e9c8940305995}{get\-Moves} (Node $\ast$)
+\item 
+void \hyperlink{class_game_tree_aaf2185a3a026a9ed2dc548c8e4414487}{get\-Legals} (Node $\ast$, int)
+\item 
+std\-::string \hyperlink{class_game_tree_af44e69f9e30a9149a7050d0bd256bb8f}{get\-Coords} (int)
+\item 
+std\-::string \hyperlink{class_game_tree_a0964729fc04a2cc51c52992fd8d462d9}{mini\-Max\-Decision} ()
+\item 
+int \hyperlink{class_game_tree_a4ed9d328a670bb24ce04fff4eaf3f99d}{mini\-Max\-Value} (Node $\ast$, int, int)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_game_tree}{Game\-Tree} class is a tree data structure used to hold all the possible moves from a given position up to a given depth. The tree is filled with \hyperlink{class_state}{State} objects which contain the current state of the game board as well as numeric scores based on the utility of that position. This class applies the A\-I's minimax algorithm by searching the tree for the best move by finding the sequence of moves which leads to the highest utility. The minimax algorithm assumes the player opposing the computer is going to play their optimal move. The depth limit of the search is set at six, effectively looking into the future three moves each for both players. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_game_tree_a88f39447182520281da9f1ee419ebc27}{\index{Game\-Tree@{Game\-Tree}!Game\-Tree@{Game\-Tree}}
+\index{Game\-Tree@{Game\-Tree}!GameTree@{Game\-Tree}}
+\subsubsection[{Game\-Tree}]{\setlength{\rightskip}{0pt plus 5cm}Game\-Tree\-::\-Game\-Tree (
+\begin{DoxyParamCaption}
+\item[{{\bf Board} \&}]{start}
+\end{DoxyParamCaption}
+)}}\label{class_game_tree_a88f39447182520281da9f1ee419ebc27}
+Name\-: Alec Farfan Date\-: 06/03/14 Purpose\-: Functions of the \hyperlink{class_game_tree}{Game\-Tree} class This function is the constructor for the \hyperlink{class_game_tree}{Game\-Tree} class. The initial game state at the beginning of a turn is stored in a root node and is inserted into the tree.\hypertarget{class_game_tree_affdde7b9a8c14746c78178aeb8f87102}{\index{Game\-Tree@{Game\-Tree}!$\sim$\-Game\-Tree@{$\sim$\-Game\-Tree}}
+\index{$\sim$\-Game\-Tree@{$\sim$\-Game\-Tree}!GameTree@{Game\-Tree}}
+\subsubsection[{$\sim$\-Game\-Tree}]{\setlength{\rightskip}{0pt plus 5cm}Game\-Tree\-::$\sim$\-Game\-Tree (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_game_tree_affdde7b9a8c14746c78178aeb8f87102}
+This function is the destructor of the \hyperlink{class_game_tree}{Game\-Tree} class. The function passes the root of the tree to the make\-Deletions function which recursively deletes the tree.
+
+\subsection{Member Function Documentation}
+\hypertarget{class_game_tree_af44e69f9e30a9149a7050d0bd256bb8f}{\index{Game\-Tree@{Game\-Tree}!get\-Coords@{get\-Coords}}
+\index{get\-Coords@{get\-Coords}!GameTree@{Game\-Tree}}
+\subsubsection[{get\-Coords}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Game\-Tree\-::get\-Coords (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{class_game_tree_af44e69f9e30a9149a7050d0bd256bb8f}
+This function takes an integer representing the index of the board and returns the letter/number coordinate in the form of a string so it can be used in the main program\hypertarget{class_game_tree_aaf2185a3a026a9ed2dc548c8e4414487}{\index{Game\-Tree@{Game\-Tree}!get\-Legals@{get\-Legals}}
+\index{get\-Legals@{get\-Legals}!GameTree@{Game\-Tree}}
+\subsubsection[{get\-Legals}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-Tree\-::get\-Legals (
+\begin{DoxyParamCaption}
+\item[{Node $\ast$}]{node\-Ptr, }
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{class_game_tree_aaf2185a3a026a9ed2dc548c8e4414487}
+This function takes an index and the character array stored in the node\-Ptr's 'current' data member and finds all the legal moves from that spot. If a legal move is found the coordinate of the square selected as well as the coordinate of the square moved to is popped into the queue as a string.\hypertarget{class_game_tree_a9c0b8d81a67c61a2f02e9c8940305995}{\index{Game\-Tree@{Game\-Tree}!get\-Moves@{get\-Moves}}
+\index{get\-Moves@{get\-Moves}!GameTree@{Game\-Tree}}
+\subsubsection[{get\-Moves}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-Tree\-::get\-Moves (
+\begin{DoxyParamCaption}
+\item[{Node $\ast$}]{node\-Ptr}
+\end{DoxyParamCaption}
+)}}\label{class_game_tree_a9c0b8d81a67c61a2f02e9c8940305995}
+This function runs through the character array stored in the node\-Ptr's 'current' data member and finds all the pieces of the player whose turn it is and passes them into the get\-Legal function to fill the moves \hyperlink{class_queue}{Queue} data member with all the legal moves for that player. The num\-Children variable is set at the end.\hypertarget{class_game_tree_a20ac6eb474e44847646d3231d7ef2fc0}{\index{Game\-Tree@{Game\-Tree}!insert\-Node@{insert\-Node}}
+\index{insert\-Node@{insert\-Node}!GameTree@{Game\-Tree}}
+\subsubsection[{insert\-Node}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-Tree\-::insert\-Node (
+\begin{DoxyParamCaption}
+\item[{Node $\ast$}]{node\-Ptr}
+\end{DoxyParamCaption}
+)}}\label{class_game_tree_a20ac6eb474e44847646d3231d7ef2fc0}
+This function passes the root to the insert function which recursively generates and inserts game states into the tree. The tree is generated up to a given depth passed into the second parameter of the insert function.\hypertarget{class_game_tree_a0964729fc04a2cc51c52992fd8d462d9}{\index{Game\-Tree@{Game\-Tree}!mini\-Max\-Decision@{mini\-Max\-Decision}}
+\index{mini\-Max\-Decision@{mini\-Max\-Decision}!GameTree@{Game\-Tree}}
+\subsubsection[{mini\-Max\-Decision}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Game\-Tree\-::mini\-Max\-Decision (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_game_tree_a0964729fc04a2cc51c52992fd8d462d9}
+This function is an implementation of the minimax algorithm's minimax\-Decision function. The function looks at the available legal moves and searches all the subtrees branching off from each move and identifies the sequence with the highest utility. All the sequences returned are then compared against each other and the one with the highest utility represents the best move from that position.\hypertarget{class_game_tree_a4ed9d328a670bb24ce04fff4eaf3f99d}{\index{Game\-Tree@{Game\-Tree}!mini\-Max\-Value@{mini\-Max\-Value}}
+\index{mini\-Max\-Value@{mini\-Max\-Value}!GameTree@{Game\-Tree}}
+\subsubsection[{mini\-Max\-Value}]{\setlength{\rightskip}{0pt plus 5cm}int Game\-Tree\-::mini\-Max\-Value (
+\begin{DoxyParamCaption}
+\item[{Node $\ast$}]{node\-Ptr, }
+\item[{int}]{total, }
+\item[{int}]{depth}
+\end{DoxyParamCaption}
+)}}\label{class_game_tree_a4ed9d328a670bb24ce04fff4eaf3f99d}
+This function is an implementation of the minimax algorithm's minimax\-Value function. This function searches a node's array of child nodes looking for the one with the highest utility. This score is then added to the total and that child node is recursively passed into this function and the function continues until either the maximum depth is reached or the branch ends.
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/\-Users/\-Alec/\-Desktop/\-Project\-\_\-2/\-Checkers/Game\-Tree.\-h\item 
+C\-:/\-Users/\-Alec/\-Desktop/\-Project\-\_\-2/\-Checkers/Game\-Tree.\-cpp\end{DoxyCompactItemize}
